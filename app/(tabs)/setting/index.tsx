@@ -1,11 +1,11 @@
 import { Text, SafeAreaView } from "react-native";
 
-const HomeScreen = () => {
+const MyScreen = () => {
   return (
     <SafeAreaView>
-      <Text>홈 스크린</Text>
+      <Text>설정 스크린</Text>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default MyScreen;
