@@ -2,7 +2,7 @@ import { Link, Stack } from "expo-router";
 import Foundation from "@expo/vector-icons/Foundation";
 import { colors } from "@/constants";
 
-const AuthLayout = () => {
+export default function AuthLayout() {
   return (
     <Stack
       screenOptions={{
@@ -19,13 +19,19 @@ const AuthLayout = () => {
           headerShown: true,
           headerLeft: () => (
             <Link href={"/"} replace style={{ paddingRight: 5 }}>
-              <Foundation name="home" size={28} color={colors.BLACK} />
+              <Foundation name="home" size={28} color={"black"} />
             </Link>
           ),
         }}
       />
+
+      <Stack.Screen
+        name="login"
+        options={{
+          title: "이메일 로그인",
+          headerShown: true,
+        }}
+      />
     </Stack>
   );
-};
-
-export default AuthLayout;
+}

@@ -1,8 +1,13 @@
 import CustomButton from "@/components/CustomButton";
-import { Link } from "expo-router";
-import { SafeAreaView, StyleSheet, View, Image } from "react-native";
+import { Link, router } from "expo-router";
+import { Image, SafeAreaView, StyleSheet, View } from "react-native";
 
-const AuthScreen = () => {
+export default function AuthScreen() {
+  const handleClick = () => {
+    console.log("clicked");
+    router.push("/auth/login");
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>
@@ -13,14 +18,14 @@ const AuthScreen = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <CustomButton label="이메일 로그인" />
+        <CustomButton label="이메일 로그인" onPress={handleClick} />
         <Link href={"/"} style={styles.signupText}>
           이메일로 가입하기
         </Link>
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -45,5 +50,3 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
-
-export default AuthScreen;
