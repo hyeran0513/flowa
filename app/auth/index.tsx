@@ -3,11 +3,6 @@ import { Link, router } from "expo-router";
 import { Image, SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function AuthScreen() {
-  const handleClick = () => {
-    console.log("clicked");
-    router.push("/auth/login");
-  };
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>
@@ -18,8 +13,11 @@ export default function AuthScreen() {
       </View>
 
       <View style={styles.buttonContainer}>
-        <CustomButton label="이메일 로그인" onPress={handleClick} />
-        <Link href={"/"} style={styles.signupText}>
+        <CustomButton
+          label="이메일 로그인"
+          onPress={() => router.push("/auth/login")}
+        />
+        <Link href={"/auth/signup"} style={styles.signupText}>
           이메일로 가입하기
         </Link>
       </View>
