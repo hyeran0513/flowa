@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import FeedItem from "./FeedItem";
 import { colors } from "@/constants";
 
@@ -9,8 +9,8 @@ const dummyData = [
     userId: 1,
     title: "더미 제목입니다.",
     description:
-      "더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.",
-    createdAt: "",
+      "더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다.  더미 내용입니다.더미 내용입니다.  더미 내용입니다. 더미 내용입니다.",
+    createdAt: "2025-01-01",
     author: {
       id: 1,
       nickname: "닉네임",
@@ -24,12 +24,12 @@ const dummyData = [
     viewCount: 1,
   },
   {
-    id: 1,
+    id: 2,
     userId: 1,
     title: "더미 제목입니다.",
     description:
-      "더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.더미 내용입니다.",
-    createdAt: "",
+      "더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다. 더미 내용입니다.  더미 내용입니다.더미 내용입니다.  더미 내용입니다. 더미 내용입니다.",
+    createdAt: "2025-02-01",
     author: {
       id: 1,
       nickname: "닉네임",
@@ -44,9 +44,7 @@ const dummyData = [
   },
 ];
 
-interface FeedListProps {}
-
-function FeedList({}: FeedListProps) {
+function FeedList() {
   return (
     <FlatList
       data={dummyData}
