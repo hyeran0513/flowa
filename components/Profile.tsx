@@ -1,32 +1,39 @@
 import { colors } from "@/constants";
-import React from "react";
-import { Pressable, StyleSheet, View, Image, Text } from "react-native";
+import React, { ReactNode } from "react";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 interface ProfileProps {
   onPress: () => void;
   nickname: string;
-  imageUri: string;
+  imageUri?: string;
   createdAt: string;
+  option?: ReactNode;
 }
 
-function Profile({ onPress, imageUri, nickname, createdAt }: ProfileProps) {
+function Profile({
+  onPress,
+  imageUri,
+  nickname,
+  createdAt,
+  option,
+}: ProfileProps) {
   return (
     <View style={styles.container}>
       <Pressable style={styles.profileContainer} onPress={onPress}>
         <Image
           source={
             imageUri
-              ? { url: imageUri }
+              ? { uri: imageUri }
               : require("@/assets/images/default-avatar.png")
           }
           style={styles.avatar}
         />
-
-        <View>
+        <View style={{ gap: 4 }}>
           <Text style={styles.nickname}>{nickname}</Text>
           <Text style={styles.createdAt}>{createdAt}</Text>
         </View>
       </Pressable>
+      {option}
     </View>
   );
 }
